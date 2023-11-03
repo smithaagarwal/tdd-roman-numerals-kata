@@ -33,11 +33,17 @@ describe("test convertIntegerToRoman function for single digit numbers that are 
   it("should return III for convertIntegerToRoman(3)", () => {
     expect(convertIntegerToRoman(3)).toBe("III");
   });
+  it("should return IV for convertIntegerToRoman(4)", () => {
+    expect(convertIntegerToRoman(4)).toBe("IV");
+  });
   it("should return VIII for convertIntegerToRoman(8)", () => {
     expect(convertIntegerToRoman(8)).toBe("VIII");
   });
+  it("should return IX for convertIntegerToRoman(9)", () => {
+    expect(convertIntegerToRoman(9)).toBe("IX");
+  });
 });
-//have to fix these scenarios
+
 describe("test convertIntegerToRoman function for numbers within 1000 with simple conversions", () => {
   it("should return 'DCCCL' for convertIntegerToRoman(850)", () => {
     expect(convertIntegerToRoman(850)).toBe("DCCCL");
@@ -68,9 +74,9 @@ describe("test convertIntegerToRoman function for edge cases 0 and 3000 ", () =>
   it("should return '' for convertIntegerToRoman(0)", () => {
     expect(convertIntegerToRoman(0)).toBe("");
   });
- /* it("should return MMM for convertIntegerToRoman(3000)", () => {
+  it("should return MMM for convertIntegerToRoman(3000)", () => {
     expect(convertIntegerToRoman(3000)).toBe("MMM");
-  });*/
+  });
 });
 
 describe("test convertIntegerToRoman function for numbers greater than 3000 ", () => {
@@ -81,11 +87,15 @@ describe("test convertIntegerToRoman function for numbers greater than 3000 ", (
   });
 });
 
-//have to fix these scenarios
 describe("test convertIntegerToRoman function for numbers greater than 1000 ", () => {
-  //have to fix this -- goes into infinite loop as logic hasn't been written
   it("should return MML for convertIntegerToRoman(2050)", () => {
-   expect(convertIntegerToRoman(2050)).toBe("MML");
+    expect(convertIntegerToRoman(2050)).toBe("MML");
+  });
+  it("should return MMCXI for convertIntegerToRoman(2111)", () => {
+    expect(convertIntegerToRoman(2111)).toBe("MMCXI");
+  });
+  it("should return MMCMXXXII for convertIntegerToRoman(2932)", () => {
+    expect(convertIntegerToRoman(2932)).toBe("MMCMXXXII");
   });
 });
 
