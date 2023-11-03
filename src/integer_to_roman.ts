@@ -9,7 +9,6 @@ export function convertIntegerToRoman(num: number): string {
      //= getRangeForNumber(num);
     const [fromInt, toInt] = getRangeForNumber(num);
     const midOfRange = Math.ceil((fromInt + toInt)/2);
-    console.log("midrange ",midOfRange)
     if (num <= midOfRange) {
       return INTEGER_TO_ROMAN_MAPPING[fromInt] + convertIntegerToRoman(num-fromInt);
     }
