@@ -4,6 +4,7 @@ import {
 } from "./integer_to_roman_constants";
 
 export function convertIntegerToRoman(num: number): string {
+  if (num === 0) return "";
   if (INTEGER_TO_ROMAN_MAPPING[num] !== undefined) {
     // return getRomanEquivalentFromMap(num);
     return INTEGER_TO_ROMAN_MAPPING[num];
@@ -18,19 +19,13 @@ export function convertIntegerToRoman(num: number): string {
       );
     } else
       return (
-        convertIntegerToRoman(toInt - num) + INTEGER_TO_ROMAN_MAPPING[toInt]
+        convertIntegerToRoman(toInt - splitOfRange) +
+        INTEGER_TO_ROMAN_MAPPING[toInt] +
+        convertIntegerToRoman(num - splitOfRange)
       );
-    // upperEndInteger/2;
-    //find the half of key - (key-1)/2 5-1/2 = 2+1,  10-5 = 5/2 +1
-    // return correspondingRoman;
   }
 }
 
-/*export function getRomanEquivalentFromMap(num: number): string {
-  let romanValue = INTEGER_TO_ROMAN_MAPPING.get(num);
-  if (romanValue !== undefined) return romanValue;
-  else return "none";
-}*/
 export function getRangeForNumber(num: number): [number, number] {
   let fromInt = "1";
   let toInt = "1";

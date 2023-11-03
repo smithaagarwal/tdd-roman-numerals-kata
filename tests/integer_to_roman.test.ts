@@ -37,17 +37,32 @@ describe("test convertIntegerToRoman function for single digit numbers that are 
   
 });
 //have to fix these scenarios
-describe("test convertIntegerToRoman function for numbers within 1000 ", () => {
-  it("should return 'CML' for convertIntegerToRoman(950)", () => {
-    expect(convertIntegerToRoman(950)).toBe("CML");
+describe("test convertIntegerToRoman function for numbers within 1000 with simple conversions", () => {
+  it("should return 'DCCCL' for convertIntegerToRoman(850)", () => {
+    expect(convertIntegerToRoman(850)).toBe("DCCCL");
   });
-  it("should return 201 for convertIntegerToRoman(201)", () => {
+  it("should return CCI for convertIntegerToRoman(201)", () => {
     expect(convertIntegerToRoman(201)).toBe("CCI");
   });
-  it("should return 350 for convertIntegerToRoman(3)", () => {
+  it("should return CCCL for convertIntegerToRoman(350)", () => {
     expect(convertIntegerToRoman(350)).toBe("CCCL");
   });
 });
+describe("test convertIntegerToRoman function for numbers within 1000 where order of conversion matter", () => {
+  it("should return 'CML' for convertIntegerToRoman(950)", () => {
+    expect(convertIntegerToRoman(950)).toBe("CML");
+  });
+  it("should return XCV for convertIntegerToRoman(95)", () => {
+    expect(convertIntegerToRoman(95)).toBe("XCV");
+  });
+  it("should return XCIV for convertIntegerToRoman(99)", () => {
+    expect(convertIntegerToRoman(99)).toBe("XCIX");
+  });
+  it("should return CMXCV for convertIntegerToRoman(995)", () => {
+    expect(convertIntegerToRoman(995)).toBe("CMXCV");
+  });
+});
+
 //have to fix these scenarios
 describe("test convertIntegerToRoman function for numbers greater than 1000 ", () => {
 
