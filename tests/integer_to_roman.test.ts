@@ -57,22 +57,6 @@ describe("test convertIntegerToRoman function for numbers greater than 1000 ", (
   //});
 });
 
-/*describe("test getRomanEquivalentFromMap function for digits present in map", () => {
-  it("should return 'I' for getRomanEquivalentFromMap(1)", () => {
-    expect(getRomanEquivalentFromMap(1)).toBe("I");
-  });
-  it("should return 'V' for getRomanEquivalentFromMap(5)", () => {
-    expect(getRomanEquivalentFromMap(5)).toBe("V");
-  });
-  it("should return 'I' for getRomanEquivalentFromMap(1)", () => {
-    expect(getRomanEquivalentFromMap(50)).toBe("L");
-  });
-});
-describe("test getRomanEquivalentFromMap function for digits not present in the map",() => {
-  it("should return 'none' for getRomanEquivalentFromMap(2)",() => {
-    expect(getRomanEquivalentFromMap(2)).toBe("none");
-  })
-});*/
 describe("test getRangeForNumber function to check for the integer range the number lies in ",() => {
   it("should return [1,5] for numbers from 2-4",()=> {
     expect(getRangeForNumber(4)).toEqual([1,5]);
