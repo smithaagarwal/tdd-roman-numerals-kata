@@ -3,7 +3,7 @@ import {
   SPLIT_FOR_RANGE,
 } from "./integer_to_roman_constants";
 
-export function convertIntegerToRoman(num: number): string {
+export const convertIntegerToRoman = (num: number): string => {
   if (num > 3000) return "Input has to be less than or equal to 3000";
   if (num === 0) return "";
   if (INTEGER_TO_ROMAN_MAPPING[num] !== undefined) {
@@ -23,9 +23,9 @@ export function convertIntegerToRoman(num: number): string {
         convertIntegerToRoman(num - splitOfRange)
       );
   }
-}
+};
 
-export function getRangeForNumber(num: number): [number, number] {
+export const getRangeForNumber = (num: number): [number, number] => {
   let fromInt = "1";
   let toInt = "1";
   for (toInt in INTEGER_TO_ROMAN_MAPPING) {
@@ -33,4 +33,4 @@ export function getRangeForNumber(num: number): [number, number] {
     fromInt = toInt;
   }
   return [Number(fromInt), num];
-}
+};
